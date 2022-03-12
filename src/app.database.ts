@@ -1,6 +1,13 @@
 import { Injectable } from "@nestjs/common";
-
+import { createClient } from "redis";
 @Injectable()
 export class AppDatabase {
-  constructor() {}
+  #client: Object;
+  constructor() {
+    this.#client = createClient();
+  }
+
+  async insertDatabse(): Promise<boolean>{
+    return true;
+  }
 }
